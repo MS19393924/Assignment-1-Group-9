@@ -1,0 +1,57 @@
+#Assignment 1
+
+#Question 3 (5 points)
+#Create a Ridge regression model to predict alcohol content (as in Question 1).
+
+#What to submit
+#Submit your Python code as part of your report or if you have separate Python
+#code (.py files), write in your report what they are called and where to find 
+#them on GitHub.
+
+#Write a brief description of your steps to create your model, including but 
+#not limited to the following:
+    
+#Answer: Ridge regression being a regularised technique for linear regressio
+    
+#What is the accuracy of your model on the training and test data?
+
+#Answer: 
+
+
+
+#How did you tune the hyperparameter of your model?
+#Compare this model with the linear regression model in Question 1, did you
+#achieve improvement in your result? What’s the difference between the two
+#models?
+
+
+
+import numpy as np
+import os
+import pandas as pd
+import matplotlib as mpl
+
+from sklearn.linear_model import Ridge
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import mean_squared_error
+
+from pandas import read_csv
+from matplotlib import pyplot
+
+dataQ3 = pd.read_csv('winequality-red.csv')
+data = dataQ3.values
+X, y = data[:, :-1], data[:, -1]
+
+#defining model
+model=Ridge(alpha=1.0)
+#define model evaluation method
+cv = RepeatedkFold(n_splits=10, n_repeats=3, random_state=1)
+
+#evaluate an ridge regression model on the dataset
+from numpy import mean
+from numoy import std
+from numpy import absolute
+from pandas import read_csv
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import RepeatedkFold
+from sklearn.linear_model import Ridge
